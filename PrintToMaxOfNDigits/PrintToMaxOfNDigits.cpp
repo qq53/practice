@@ -2,7 +2,7 @@
 /*
   ------------------------------------
   Create date : 2015-01-15 02:27
-  Modified date: 2015-01-15 04:05
+  Modified date: 2015-01-15 04:09
   Author : Sen1993
   Email : gsen1993@gmail.com
   ------------------------------------
@@ -17,23 +17,23 @@ using namespace std;
 bool Increment(char number[]){
 	int i = strlen(number) - 1;
 	
-	number[i] += 1;
+	++number[i];
 
 	bool isFinished = false;
 	while(number[i] > '9'){
-		if(i == 0){
+		if(i == 0){ //若最高为都要进位表示已经到最大数了
 			isFinished = true;
 			break;
-		}else{
+		}else{	//模拟加法
 			number[i] -= 10;
-			number[i - 1] += 1;
+			++number[i - 1];
 			--i;
 		}
 	}
 	return isFinished;
 }
 
-void PrintNumber(char number[]){
+void PrintNumber(char number[]){ //从第一个非零打印
 	int i = 0;
 	int len = strlen(number);
 	
