@@ -2,7 +2,7 @@
 /*
   ------------------------------------
   Create date : 2015-01-18 03:53
-  Modified date: 2015-01-18 04:28
+  Modified date: 2015-01-18 05:28
   Author : Sen1993
   Email : gsen1993@gmail.com
   ------------------------------------
@@ -20,4 +20,6 @@ public:
 	int getValue(ListNode *pNode);
 	ListNode *getHead();
 	ListNode *next(ListNode *pNode);
+	void setNext(ListNode *pNode, ListNode *pNext);
+	void print();
 };

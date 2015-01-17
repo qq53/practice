@@ -2,13 +2,14 @@
 /*
   ------------------------------------
   Create date : 2015-01-18 03:51
-  Modified date: 2015-01-18 04:50
+  Modified date: 2015-01-18 05:10
   Author : Sen1993
   Email : gsen1993@gmail.com
   ------------------------------------
 */
 
 #include <iostream>
+#include "../libs/myException.cpp"
 #include "../libs/ListNode.cpp"
 
 using namespace std;

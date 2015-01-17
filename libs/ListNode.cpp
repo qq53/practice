@@ -2,14 +2,13 @@
 /*
   ------------------------------------
   Create date : 2015-01-18 04:11
-  Modified date: 2015-01-18 04:45
+  Modified date: 2015-01-18 05:28
   Author : Sen1993
   Email : gsen1993@gmail.com
   ------------------------------------
 */
 
 #include "ListNode.h"
-#include "myException.cpp"
 
 ListNode *cListNode::create(int *array, int n){
 	if(array == NULL || n <= 0)
@@ -43,4 +42,19 @@ ListNode *cListNode::next(ListNode *pNode){
 	if(pNode == NULL)
 		throw myException("get next fail");
 	return pNode->m_pNext;
+}
+
+void cListNode::setNext(ListNode *pNode, ListNode *pNext){
+	if(pNode == NULL)
+		throw myException("setNext fail");
+	pNode->m_pNext = pNext;
+}
+
+void cListNode::print(){
+	ListNode *pNode = next(this->pHead);
+	while(pNode != NULL){
+		std::cout << getValue(pNode) << " ";
+		pNode = next(pNode);
+	}
+	std::cout << std::endl;
 }
