@@ -14,6 +14,7 @@
 
 using namespace std;
 
+//采用2个指针 快慢指针来解决,两个指针间隔n,当快指针到尾时,慢指针就是倒数n结点的指针
 void FindKthToTail(cListNode *c_pHead, int n){
 	if(c_pHead == NULL || n <= 0)
 		throw myException("FindKthToTail fail");
