@@ -2,7 +2,7 @@
 /*
   ------------------------------------
   Create date : 2015-01-18 03:53
-  Modified date: 2015-01-18 05:28
+  Modified date: 2015-01-19 02:21
   Author : Sen1993
   Email : gsen1993@gmail.com
   ------------------------------------
@@ -22,4 +22,5 @@ public:
 	ListNode *next(ListNode *pNode);
 	void setNext(ListNode *pNode, ListNode *pNext);
 	void print();
+	void setHead(ListNode *pNode);
 };

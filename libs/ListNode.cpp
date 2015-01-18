@@ -2,7 +2,7 @@
 /*
   ------------------------------------
   Create date : 2015-01-18 04:11
-  Modified date: 2015-01-18 05:28
+  Modified date: 2015-01-19 02:21
   Author : Sen1993
   Email : gsen1993@gmail.com
   ------------------------------------
@@ -52,9 +52,15 @@ void cListNode::setNext(ListNode *pNode, ListNode *pNext){
 
 void cListNode::print(){
 	ListNode *pNode = next(this->pHead);
+	if(pNode == NULL)
+		throw myException("print fail");
 	while(pNode != NULL){
 		std::cout << getValue(pNode) << " ";
 		pNode = next(pNode);
 	}
 	std::cout << std::endl;
+}
+
+void cListNode::setHead(ListNode *pNode){
+	this->pHead = pNode;
 }
