@@ -18,8 +18,6 @@ typedef struct BinaryTree{
 	BinaryTree *pRight;
 }BinaryTreeNode;
 
-void PrintBinaryRoot(BT_PRINT, BinaryTreeNode *root);
-
 void PrintBinaryTree(BT_PRINT, BinaryTreeNode *root);
 
 BinaryTreeNode *CreateBinaryTree(char *array);
