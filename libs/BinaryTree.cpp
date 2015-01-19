@@ -2,7 +2,7 @@
 /*
   ------------------------------------
   Create date : 2014-11-26 09:23
-  Modified date: 2015-01-20 04:25
+  Modified date: 2015-01-20 04:34
   Author : Sen1993
   Email : gsen1993@gmail.com
   ------------------------------------
@@ -11,7 +11,7 @@
 
 #include "BinaryTree.h"
 
-void PrintBinaryRoot(BT_PRINT m, pBinaryTreeNode root){
+void PrintBinaryRoot(BT_PRINT m, BinaryTreeNode* root){
 	if( m == PREORDER)
 		std::cout << root->cValue << " ";
 
@@ -28,7 +28,7 @@ void PrintBinaryRoot(BT_PRINT m, pBinaryTreeNode root){
 		std::cout << root->cValue << " ";
 }
 
-void PrintBinaryTree(BT_PRINT m, pBinaryTreeNode root){
+void PrintBinaryTree(BT_PRINT m, BinaryTreeNode* root){
 	switch(m){
 	case PREORDER:
 		std::cout << "PreOrder: ";
@@ -47,10 +47,12 @@ void PrintBinaryTree(BT_PRINT m, pBinaryTreeNode root){
 }
 
 BinaryTreeNode *CreateBinaryTree(char *array){
+	if(array == NULL)
+		throw myException("create binarytree fail");
 	if(*array == '#')
 		return NULL;
 
-	BinarayTreeNode *root = new BinaryTreeNode;
+	BinaryTreeNode *root = new BinaryTreeNode;
 	root->cValue = *array;
 	root->pLeft = CreateBinaryTree(array+1);
 	root->pRight = CreateBinaryTree(array+2);

@@ -2,7 +2,7 @@
 /*
   ------------------------------------
   Create date : 2014-11-26 01:05
-  Modified date: 2015-01-20 04:25
+  Modified date: 2015-01-20 04:48
   Author : Sen1993
   Email : gsen1993@gmail.com
   ------------------------------------
@@ -18,8 +18,8 @@ typedef struct BinaryTree{
 	BinaryTree *pRight;
 }BinaryTreeNode;
 
-void PrintBinaryRoot(BT_PRINT, pBinaryTreeNode);
+void PrintBinaryRoot(BT_PRINT, BinaryTreeNode *root);
 
-void PrintBinaryTree(BT_PRINT, pBinaryTreeNode);
+void PrintBinaryTree(BT_PRINT, BinaryTreeNode *root);
 
-BinarayTreeNode *CreateBinaryTree(char *array);
+BinaryTreeNode *CreateBinaryTree(char *array);
