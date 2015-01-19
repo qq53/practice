@@ -2,7 +2,7 @@
 /*
   ------------------------------------
   Create date : 2014-11-26 01:05
-  Modified date: 2014-11-27 18:11
+  Modified date: 2015-01-20 04:25
   Author : Sen1993
   Email : gsen1993@gmail.com
   ------------------------------------
@@ -13,11 +13,13 @@
 enum BT_PRINT{PREORDER, INORDER, POSTORDER};
 
 typedef struct BinaryTree{
-	int nValue;
+	char cValue;
 	BinaryTree *pLeft;
 	BinaryTree *pRight;
-}*pBinaryTreeNode,BinaryTreeNode;
+}BinaryTreeNode;
 
 void PrintBinaryRoot(BT_PRINT, pBinaryTreeNode);
 
 void PrintBinaryTree(BT_PRINT, pBinaryTreeNode);
+
+BinarayTreeNode *CreateBinaryTree(char *array);
