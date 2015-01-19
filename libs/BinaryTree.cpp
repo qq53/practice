@@ -2,7 +2,7 @@
 /*
   ------------------------------------
   Create date : 2014-11-26 09:23
-  Modified date: 2015-01-20 04:34
+  Modified date: 2015-01-20 05:14
   Author : Sen1993
   Email : gsen1993@gmail.com
   ------------------------------------
@@ -46,7 +46,9 @@ void PrintBinaryTree(BT_PRINT m, BinaryTreeNode* root){
 	std::cout << std::endl;
 }
 
-BinaryTreeNode *CreateBinaryTree(char *array){
+char *array = NULL;
+
+BinaryTreeNode *CreateTree(){
 	if(array == NULL)
 		throw myException("create binarytree fail");
 	if(*array == '#')
@@ -54,7 +56,12 @@ BinaryTreeNode *CreateBinaryTree(char *array){
 
 	BinaryTreeNode *root = new BinaryTreeNode;
 	root->cValue = *array;
-	root->pLeft = CreateBinaryTree(array+1);
-	root->pRight = CreateBinaryTree(array+2);
+	root->pLeft = CreateBinaryTree(++array);
+	root->pRight = CreateBinaryTree(++array);
 	return root;
+}
+
+BinaryTreeNode *CreateBinaryTree(char *arr){
+	array = arr;
+	return CreateTree();
 }
