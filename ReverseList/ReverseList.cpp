@@ -2,7 +2,7 @@
 /*
   ------------------------------------
   Create date : 2015-01-18 05:04
-  Modified date: 2015-01-18 05:32
+  Modified date: 2015-02-04 01:14
   Author : Sen1993
   Email : gsen1993@gmail.com
   ------------------------------------
@@ -14,38 +14,38 @@
 
 using namespace std;
 
-void ReverseList(cListNode *c_pList){
-	if(c_pList == NULL)
+ListNode* ReverseList(ListNode *pHead){
+	if(pHead == NULL)
 		throw myException("null pointer");
 
 	ListNode *pNewHead = NULL;
-	ListNode *pNode = c_pList->next(c_pList->getHead());
+	ListNode *pNode = pHead->m_pNext;
 	ListNode *pPrev = NULL;
 
 	if(pNode == NULL)
-		throw myException("null list");
+		throw myException("empty lists");
 	while(pNode != NULL){
-		ListNode *pNext = c_pList->next(pNode);
+		ListNode *pNext = pNode->m_pNext;
 
 		if(pNext == NULL)
 			pNewHead = pNode;
 
-		c_pList->setNext(pNode, pPrev);
+		pNode->m_pNext = pPrev;
 		pPrev = pNode;
 		pNode = pNext;
 	}
-	c_pList->setNext(c_pList->getHead(), pNewHead);
+
+	return pNewHead;
 }
 
 int main(){
-	cListNode *c_pList = new cListNode;
 	int array[] = {1,2,3,4,5,6};
 	int len = sizeof(array)/sizeof(array[0]);
 
 	try{
-		c_pList->create(array, len);
-		ReverseList(c_pList);
-		c_pList->print();
+		ListNode* pHead = CreateLists(array, len);
+		pHead = ReverseList(pHead);
+		PrintLists(pHead);
 	}catch(myException &e){
 		cout << e.what() << endl;
 	}
