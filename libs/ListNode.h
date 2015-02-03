@@ -2,7 +2,7 @@
 /*
   ------------------------------------
   Create date : 2015-01-18 03:53
-  Modified date: 2015-01-19 02:21
+  Modified date: 2015-02-04 00:56
   Author : Sen1993
   Email : gsen1993@gmail.com
   ------------------------------------
@@ -12,15 +12,5 @@ struct ListNode{
 	ListNode *m_pNext;
 };
 
-class cListNode{
-private:
-	ListNode *pHead;
-public:
-	ListNode *create(int *array, int n);
-	int getValue(ListNode *pNode);
-	ListNode *getHead();
-	ListNode *next(ListNode *pNode);
-	void setNext(ListNode *pNode, ListNode *pNext);
-	void print();
-	void setHead(ListNode *pNode);
-};
+ListNode *CreateLists(int *array, int n);
+void PrintLists(ListNode* pHead);
