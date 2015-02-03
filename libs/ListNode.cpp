@@ -2,7 +2,7 @@
 /*
   ------------------------------------
   Create date : 2015-01-18 04:11
-  Modified date: 2015-02-04 00:55
+  Modified date: 2015-02-04 01:05
   Author : Sen1993
   Email : gsen1993@gmail.com
   ------------------------------------
@@ -10,7 +10,7 @@
 
 #include "ListNode.h"
 
-ListNode CreateLists(int *array, int n){
+ListNode *CreateLists(int *array, int n){
 	if(array == NULL || n <= 0)
 		throw myException("create listnode fail");
 
@@ -34,8 +34,8 @@ void PrintLists(ListNode *pHead){
 
 	ListNode *pNode = pHead->m_pNext;
 	while(pNode != NULL){
-		std::cout << getValue(pNode) << " ";
-		pNode = next(pNode);
+		std::cout << pNode->m_nValue << " ";
+		pNode = pNode->m_pNext;
 	}
 	std::cout << std::endl;
 }
