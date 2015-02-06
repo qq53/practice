@@ -2,7 +2,7 @@
 /*
   ------------------------------------
   Create date : 2015-02-06 23:42
-  Modified date: 2015-02-06 23:44
+  Modified date: 2015-02-07 05:04
   Author : Sen1993
   Email : gsen1993@gmail.com
   ------------------------------------
@@ -12,9 +12,25 @@
 
 using namespace std;
 
+//可以利用异或运算性质找出
 void TwoNumbersAppearOnce(int *data, int len){
 	if(data == NULL || len <= 0)
 		throw myException("params error");
+
+	int split = 0;
+	for(int i = 0; i < len; ++i)
+		split ^= data[i];
+
+	int num1 = 0, num2 = 0;
+	for(int i = 0; i < len; ++i){
+		if( (data[i]&split) == 0 )
+			num1 ^= data[i];	
+		else
+			num2 ^= data[i];
+	}
+
+	cout << num1 << endl;
+	cout << num2 << endl;
 }
 
 int main(){
